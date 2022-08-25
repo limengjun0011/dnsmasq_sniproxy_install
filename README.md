@@ -68,3 +68,12 @@ wget --no-check-certificate -O dnsmasq_sniproxy.sh https://raw.githubusercontent
 ---
 
 ___本脚本仅限解锁流媒体使用___
+
+
+
+以root身份登陆后修改。CentOS系统下，输入以下命令：vi /etc/sysconfig/network-scripts/ifcfg-eth0，然后把最后两行的nameserver或者DNS值修改为我们需要的值，如果有两个DNS，删除一个或者修改第一个。然后按键盘ESC键，输入:wq保存后输入reboot重启VPS即可。
+
+
+
+Debian：输入以下命令：vi /etc/dhcp/dhclient.conf，然后在dhclient.conf最后一行添加以下字符：prepend domain-name-servers 8.8.8.8, 8.8.4.4;
+同样，修改完后，还是保存并退出，重启VPS即可。
